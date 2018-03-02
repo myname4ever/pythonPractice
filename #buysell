@@ -1,0 +1,11 @@
+#buysell
+
+eighthAmount = 35
+quarterAmount = 75
+halfAmount = 120
+gramAmount = 10
+
+print('Thank you for contacting The Plug! \nWe here in Colorado appreciate your support')
+print ('How much are you purchaseing today?\n our selection includes dank prices from a gram to a half ounce!')
+
+userAmount = raw_input()
