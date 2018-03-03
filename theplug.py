@@ -35,7 +35,7 @@ def amountSelection(userAmount):
 
 
 
-
+#takes user choice and returns corresponding price value to be put in
 def Checkout(userChoice):
 	if userChoice ==0:
 		price = gramAmount
@@ -52,12 +52,10 @@ def Checkout(userChoice):
 
 
 
+#handles transaction to tender correct change
 
-
-def payment(userPayment,userWallet):
+def payment(amountTendered,amountOwed):
 	owesMoney = True
-	amountOwed = userWallet
-	amountTendered = userPayment
 	change = 0
 
 	while owesMoney:
@@ -72,7 +70,7 @@ def payment(userPayment,userWallet):
 
 		elif amountTendered < amountOwed:
 			amountOwed = amountOwed - amountTendered
-			print 'Not enough. Please input ' + str(amountOwed) + ' or MOAR! '
+			print 'Not enough. Please input ' + str(amountOwed)
 			amountTendered = input()
 
 
@@ -80,9 +78,9 @@ def payment(userPayment,userWallet):
 
 
 
-
+#predefining variables to assign default values.
 userChoice = -1
-userWallet = 0  
+userBill = 0  
 
 print('Thank you for contacting The Plug!\nWe here in Colorado appreciate your support')
 time.sleep(.3)
@@ -94,15 +92,15 @@ userAmount = string.lower(raw_input())
 
 userChoice = amountSelection(userAmount)
 
-userWallet = Checkout(userChoice)
+userBill = Checkout(userChoice)
 
 print 'Your total is: '
-print userWallet
+print userBill
 print 'Please input your payment'
 
 userPayment = input()
 
-payment(userPayment,userWallet)
+payment(userPayment,userBill)
 
 
 
